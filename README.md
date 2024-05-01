@@ -31,7 +31,7 @@ Result design requirements: each row should slide from left to right one after a
 
 Motion (animation) slide example:
 
-![img](https://github.com/tsubaku/testtask-XMLparsing/raw/master/Resources/img/img1.png)
+![img](https://i.ibb.co/LNGvcfJ/img1.png)
 
 
 Etc.
@@ -64,7 +64,7 @@ The deadline for fulfilling the task is 5 days.
     user: postgres
     password: 12345
 
-![img](https://github.com/tsubaku/testtask-XMLparsing/raw/master/Resources/img/img2.png)
+![img](https://i.ibb.co/djqnksh/img2.png)
 
 - __authors__ - has a unique `name` field (there cannot be authors with the same names). The name field automatically has an index because of the unique constraint that is created using the constraint unique_name unique. This speeds up the search.
 
@@ -115,11 +115,11 @@ I created a based Database class in which the connection to the database occurs.
 The frontend is responsible for the work of the view.
 
 
-####The project is divided into three functional sections
+###The project is divided into three functional sections
 
-![img](https://github.com/tsubaku/testtask-XMLparsing/raw/master/Resources/img/img33.png)
+![img](https://i.ibb.co/JFsRCqz/img33.png)
 
-###1. Creating directory structures and XML files in them.
+####1. Creating directory structures and XML files in them.
 
 It is assumed that all XML files will be located in the data directory and have the following structure:
 
@@ -136,30 +136,32 @@ It is assumed that all XML files will be located in the data directory and have 
     </books>
 
 The number of files in the directory and the number of entries in the file can be configured. You can also determine the nesting depth of subdirectories.
+
+![img](https://i.ibb.co/C2tCty0/img3.png)
+
 After successful creation, the following message will appear:
 
-![img](https://github.com/tsubaku/testtask-XMLparsing/raw/master/Resources/img/img4.png)
+![img](https://i.ibb.co/K6Hn9pp/img4.png)
 
 
-###2. Parsing XML files.
+####2. Parsing XML files.
 
 To speed up parsing, indexes have been created in the database. Also, data is written to the database in batches of up to 32,767 records at a time. This value is due to the fact that the maximum number of parameters is 65535, and there are 2 parameters for each record.
 After parsing is completed, a message will appear and a list of books with authors recorded in the database will be displayed:
 
-![img](https://github.com/tsubaku/testtask-XMLparsing/raw/master/Resources/img/img6.png)
+![img](https://i.ibb.co/RDk8Kpp/img6.png)
 
 
-###3. Search.
+####3. Search.
 
 Produced in the database according to non-strict compliance. For example, "Pav" - all books written by the authors Pavel, Pavlo and others will be displayed.
 After the search is completed, a message will appear and a list of books with authors will be displayed:
 
-![img](https://github.com/tsubaku/testtask-XMLparsing/raw/master/Resources/img/img7.png)
+![img](https://i.ibb.co/2K917X9/img7.png)
 
 
-### cron
+#### cron
 Additionally, the project includes a cronJob.php file. It is prepared to run on the crown. His job: send a request to parse files.
 You can add it to run once an hour like this:
 
     0 * * * * php /path/to/script/cron.php >/dev/null 2>&1
-	
