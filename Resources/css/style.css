@@ -1,0 +1,61 @@
+/** General **/
+body{
+    background-color: aliceblue;
+}
+.input-block {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.input-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-form label {
+    flex: auto;
+    margin-right: 10px;
+}
+
+input[type=number] {
+    width: 90px;
+}
+
+/** Message **/
+#message {
+    color: blueviolet;
+    text-align: right;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/** Table and animation **/
+table {
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 0.25em 0.5em;
+    text-align: left;
+    vertical-align: top;
+}
+
+table th {
+    background-color: #009;
+    color: #fff;
+}
+
+table td {
+    background-color: #eee;
+}
+
+table tr {
+    transition: all 1s ease-in-out;
+}
+
+table tr.slide-out {
+    transform: translateX(-100%);
+}
+
